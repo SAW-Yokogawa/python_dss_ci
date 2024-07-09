@@ -4,6 +4,9 @@ import csv
 import dss
 import logging
 
+import requests
+from requests.exceptions import HTTPError, Timeout, RequestException
+
 def logging_tags():
     # create logger
     logger = logging.getLogger('simple_example')
@@ -87,7 +90,140 @@ def countdown(time_sec):
         # print("GeeksforGeeks", end= ' ')
         time.sleep(1)
         time_sec -= 1
-    
+
+def call_test_api():
+    print("CALL TEST API START PROCESS NOW !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+    # Define the URL and the data to be sent
+    url = 'http://192.168.2.88:8000/api/ci-data/add-ci-data'
+    headers = {
+        'Content-Type': 'application/json',
+    }
+
+    try:
+        # Make the GET request
+        response = requests.get(url, headers=headers, timeout=10)  # 10 seconds timeout
+
+        # Raise an HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()
+
+
+        # Check the response
+        print("CALL TEST API SUCCESS !! >>>>>>>>>>>>>>>>>>>>>>>>>>", response.json())
+
+    except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')  # HTTP error response (e.g., 404, 500)
+        logging.info(f'HTTP error occurred: {http_err}')
+    except Timeout as timeout_err:
+        print(f'Timeout error occurred: {timeout_err}')  # Request timed out
+    except RequestException as req_err:
+        print(f'Request exception occurred: {req_err}')  # General request exception
+    except Exception as err:
+        print(f'An error occurred: {err}')  # Any other exceptions
+
+def call_create_api():
+    print("CALL CREATE API START PROCESS NOW !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+    # Define the URL and the data to be sent
+    url = 'http://192.168.2.88:8000/api/ci-data/add-ci-data'
+    data = {
+        "time_ci_report" : "2024-06-01T07:01:00.000Z",
+        "batch_no" : "20000001",
+        "order_no" : "1000001",
+        "product_id" : 1,
+        "fill_no" : "3000001",
+        "operator_id" : 5,
+        "batch_start" : 0,
+        "batch_stop" : 0,
+        "tank1_v1_batch_no" : "0",
+        "tank1_v1_trig" : 0,
+        "tank1_v1_start" : 0,
+        "tank1_v1_stop" : 0,
+        "tank1_v1_custom3" : 0.00,
+        "tank1_v1_custom4" : 0.00,
+        "tank2_a1_batch_no" : "0",
+        "tank2_a1_trig" : 0,
+        "tank2_a1_t" : 31.00,
+        "tank2_a1_p" : 0.00,
+        "tank2_a1_oil_t" : 0,
+        "tank2_a1_start" : 0,
+        "tank2_a1_stop" : 0,
+        "tank2_a1_custom3" : 0.00,
+        "tank2_a1_custom4" : 0.00,
+        "tank3_k1_batch_no" : "0",
+        "tank3_k1_trig" : 0,
+        "tank3_k1_t" : 0.00,
+        "tank3_k1_i" : 0.00,
+        "tank3_k1_s" : 0.00,
+        "tank3_k1_start" : 0,
+        "tank3_k1_stop" : 0,
+        "tank3_k1_custom3" : 0.00,
+        "tank3_k1_custom4" : 0.00,
+        "tank4_k2_batch_no" : "0",
+        "tank4_k2_trig" : 0,
+        "tank4_k2_t" : 31.00,
+        "tank4_k2_i" : 0.00,
+        "tank4_k2_s" : 0.00,
+        "tank4_k2_start" : 0,
+        "tank4_k2_stop" : 0,
+        "tank4_k2_custom3" : 0.00,
+        "tank4_k2_custom4" : 0.00,
+        "tank5_filling1_batch_no" : "0",
+        "tank5_filling1_trig" : 0,
+        "tank5_filling1_fill_t" : 31.00,
+        "tank5_filling1_homo_p" : 0.00,
+        "tank5_filling1_homo_t" : 31.00,
+        "tank5_filling1_fill_t2": 0,
+        "tank5_filling1_start" : 0,
+        "tank5_filling1_stop" : 0,
+        "tank5_filling1_custom3" : 0.00,
+        "tank5_filling1_custom4" : 0.00,
+        "tank6_k3_batch_no" : "0",
+        "tank6_k3_trig" : 0,
+        "tank6_k3_t" : 31.00,
+        "tank6_k3_i" : 0.00,
+        "tank6_k3_s" : 0.00,
+        "tank6_k3_start" : 0,
+        "tank6_k3_stop" : 0,
+        "tank6_k3_custom3" : 0.00,
+        "tank6_k3_custom4" : 0.00,
+        "tank7_filling2_batch_no" : "0",
+        "tank7_filling2_trig" : 0,
+        "tank7_filling2_fill_t" : 31.00,
+        "tank7_filling2_homo_p" : 0.00,
+        "tank7_filling2_homo_t" : 31.00,
+        "tank7_filling2_start" : 0,
+        "tank7_filling2_stop" : 0,
+        "tank7_filling2_custom3" : 0.00,
+        "tank7_filling2_custom4" : 0.00,
+        "remark" : "-",
+        "is_delete" : 0,
+        "is_active" : 1,
+        "created_by" : 1,
+        "created_at" : "2024-06-21T02:40:40.267Z",
+        "updated_at" : "2024-06-21T02:40:40.267Z"
+    }
+    headers = {
+        'Content-Type': 'application/json',
+    }
+
+    try:
+        # Make the POST request
+        response = requests.post(url, json=data, headers=headers, timeout=10)  # 10 seconds timeout
+
+        # Raise an HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()
+
+        # Check the response
+        print("CALL CREATE API SUCCESS !! >>>>>>>>>>>>>>>>>>>>>>>>>>", response.json())
+
+    except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')  # HTTP error response (e.g., 404, 500)
+        logging.info(f'HTTP error occurred: {http_err}')
+    except Timeout as timeout_err:
+        print(f'Timeout error occurred: {timeout_err}')  # Request timed out
+    except RequestException as req_err:
+        print(f'Request exception occurred: {req_err}')  # General request exception
+    except Exception as err:
+        print(f'An error occurred: {err}')  # Any other exceptions
 
 
 while(True):
