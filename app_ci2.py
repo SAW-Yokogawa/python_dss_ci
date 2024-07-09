@@ -463,29 +463,29 @@ def call_create_api(current_datetime):
         logging.error('An error occurred: {}'.format(err))
 
 
-def connect():
-    try:
-        conn = dss.connect()
-        return conn
-    except Exception as e:
-        print("CANNOT CONNECT CI !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
-        logs_now = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        error_message = '{} : problem with script or manual: {}'.format(logs_now, e)
-        print(error_message)
-        logging.error(error_message)
-        raise e
+# def connect():
+#     try:
+#         conn = dss.connect()
+#         return conn
+#     except Exception as e:
+#         print("CANNOT CONNECT CI !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+#         logs_now = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+#         error_message = '{} : problem with script or manual: {}'.format(logs_now, e)
+#         print(error_message)
+#         logging.error(error_message)
+#         raise e
 
 if __name__ == "__main__":
     
     print("START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
 
     setup_logging()
-    connect()
+    conn = dss.connect()
 
     while True:
         try:
-            print("START PROCESS NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
-            logging.info('START PROCESS NOW !!')
+            # print("START PROCESS NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+            # logging.info('START PROCESS NOW !!')
             # tag_values = read_tags()  # Uncomment this line when ready to use tag values
             # call_create_api(tag_values)
 
