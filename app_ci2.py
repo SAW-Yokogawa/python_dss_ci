@@ -156,18 +156,197 @@ def call_create_api():
     logging.info(record_TANK02LR_STP)
 
 
-    
+    record_TANK03_BATCH     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_BATCH')
+    print (record_TANK03_BATCH)
+    logging.info(record_TANK03_BATCH)
+
+    record_TANK03_CT    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_CT')
+    print (record_TANK03_CT)
+    logging.info(record_TANK03_CT)
+
+    record_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
+    print (record_TI005_PV)
+    logging.info(record_TI005_PV)
+
+    record_VSD04_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_I')
+    print (record_VSD04_I)
+    logging.info(record_VSD04_I)
+
+    record_VSD04_S    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_S')
+    print (record_VSD04_S)
+    logging.info(record_VSD04_S)
+
+    record_TANK03LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STR')
+    print (record_TANK03LR_STR)
+    logging.info(record_TANK03LR_STR)
+
+    record_TANK03LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STP')
+    print (record_TANK03LR_STP)
+    logging.info(record_TANK03LR_STP)
+
+
+
+
+    record_TANK04_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04_BATCH')
+    print (record_TANK04_BATCH)
+    logging.info(record_TANK04_BATCH)
+
+    record_TANK04_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04_CT')
+    print (record_TANK04_CT)
+    logging.info(record_TANK04_CT)
+
+    record_TI008_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI008_PV')
+    print (record_TI008_PV)
+    logging.info(record_TI008_PV)
+
+    record_VSD05_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD05_I')
+    print (record_VSD05_I)
+    logging.info(record_VSD05_I)
+
+    record_VSD05_S   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD05_S')
+    print (record_VSD05_S)
+    logging.info(record_VSD05_S)
+
+    record_TANK04LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04LR_STR')
+    print (record_TANK04LR_STR)
+    logging.info(record_TANK04LR_STR)
+
+    record_TANK04LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04LR_STP')
+    print (record_TANK04LR_STP)
+    logging.info(record_TANK04LR_STP)
+
+
+    # TANK05 K2
+
+    record_TANK05_BATCH     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_BATCH')
+    print (record_TANK05_BATCH)
+    logging.info(record_TANK05_BATCH)
+
+    record_TANK03_CT    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_CT')
+    print (record_TANK03_CT)
+    logging.info(record_TANK03_CT)
+
+    record_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
+    print (record_TI005_PV)
+    logging.info(record_TI005_PV)
+
+    record_VSD04_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_I')
+    print (record_VSD04_I)
+    logging.info(record_VSD04_I)
+
+    record_VSD04_S    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_S')
+    print (record_VSD04_S)
+    logging.info(record_VSD04_S)
+
+    record_TANK03LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STR')
+    print (record_TANK03LR_STR)
+    logging.info(record_TANK03LR_STR)
+
+    record_TANK03LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STP')
+    print (record_TANK03LR_STP)
+    logging.info(record_TANK03LR_STP)
+
+
+
+    #  Tank 6 K3
+    record_TANK06_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06_BATCH')
+    print (record_TANK06_BATCH)
+    logging.info(record_TANK06_BATCH)
+
+    record_TANK06_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06_CT')
+    print (record_TANK06_CT)
+    logging.info(record_TANK06_CT)
+
+    record_TI908_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI908_PV')
+    print (record_TI908_PV)
+    logging.info(record_TI908_PV)
+
+    record_VSD07_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD07_I')
+    print (record_VSD07_I)
+    logging.info(record_VSD07_I)
+
+    record_VSD07_S   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD07_S')
+    print (record_VSD07_S)
+    logging.info(record_VSD07_S)
+
+    record_TANK06LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06LR_STR')
+    print (record_TANK06LR_STR)
+    logging.info(record_TANK06LR_STR)
+
+    record_TANK06LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06LR_STP')
+    print (record_TANK06LR_STP)
+    logging.info(record_TANK06LR_STP)
+
+
+    # Filling
+
+    filling_TANK05_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_BATCH')
+    print (filling_TANK05_BATCH)
+    logging.info(filling_TANK05_BATCH)
+
+    filling_TANK05_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_CT')
+    print (filling_TANK05_CT)
+    logging.info(filling_TANK05_CT)
+
+    filling_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
+    print (filling_TI005_PV)
+    logging.info(filling_TI005_PV)
+
+    filling_PT_001    	= dss.readEqual(conn, data_set, 'GREASE2.HOMOGENIZER.PT_001')
+    print (filling_PT_001)
+    logging.info(filling_PT_001)
+
+    filling_TI015_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI015_PV')
+    print (filling_TI015_PV)
+    logging.info(filling_TI015_PV)
+
+    filling_TI008_PV    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI008_PV')
+    print (filling_TI008_PV)
+    logging.info(filling_TI008_PV)
+
+    filling_TANK05LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05LR_STR')
+    print (filling_TANK05LR_STR)
+    logging.info(filling_TANK05LR_STR)
+
+    filling_TANK05LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05LR_STP')
+    print (filling_TANK05LR_STP)
+    logging.info(filling_TANK05LR_STP)
+
+    # filling2
+
+    filling2_TANK07_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07_BATCH')
+    print (filling2_TANK07_BATCH)
+    logging.info(filling2_TANK07_BATCH)
+
+    filling2_TANK05_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_CT')
+    print (filling2_TANK05_CT)
+    logging.info(filling2_TANK05_CT)
+
+    filling2_TI908_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI908_PV')
+    print (filling2_TI908_PV)
+    logging.info(filling2_TI908_PV)
+
+    filling2_PT_001    	= dss.readEqual(conn, data_set, 'GREASE2.HOMOGENIZER.PT_001')
+    print (filling2_PT_001)
+    logging.info(filling2_PT_001)
+
+    filling2_TI015_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI015_PV')
+    print (filling2_TI015_PV)
+    logging.info(filling2_TI015_PV)
+
+
+    filling2_TANK07LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07LR_STR')
+    print (filling2_TANK07LR_STR)
+    logging.info(filling2_TANK07LR_STR)
+
+    filling2_TANK07LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07LR_STP')
+    print (filling2_TANK07LR_STP)
+    logging.info(filling2_TANK07LR_STP)
+
 
     print("CALL CREATE API START PROCESS NOW !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
 
-    # Define the timezone
-    tz = pytz.timezone('Asia/Bangkok')
-
-    # Get the current datetime in the specified timezone
-    this_moment = datetime.now(tz)
-
-    # Format the datetime as a string in '%Y-%m-%d %H:%M:%S' format
-    current_datetime = this_moment.strftime('%Y-%m-%d %H:%M:000')
+   
     
     # batch_no = tag_values.get('GREASE.FAM0101.HMI201_BATCH_BUF', 'default_batch_no')
     # order_no = tag_values.get('GREASE.FAM0101.HMI201_ORDER_BUF', 'default_order_no')
@@ -198,50 +377,50 @@ def call_create_api():
         "tank2_a1_stop": record_TANK02LR_STP['ITEM_VALUE'],
         "tank2_a1_custom3": 0.00,
         "tank2_a1_custom4": 0.00,
-        "tank3_k1_batch_no": "0",
-        "tank3_k1_trig": 0,
-        "tank3_k1_t": 0.00,
-        "tank3_k1_i": 0.00,
-        "tank3_k1_s": 0.00,
-        "tank3_k1_start": 0,
-        "tank3_k1_stop": 0,
+        "tank3_k1_batch_no": record_TANK03_BATCH['ITEM_VALUE'],
+        "tank3_k1_trig": record_TANK03_CT['ITEM_VALUE'],
+        "tank3_k1_t": record_TI005_PV['ITEM_VALUE'],
+        "tank3_k1_i": record_VSD04_I['ITEM_VALUE'],
+        "tank3_k1_s": record_VSD04_S['ITEM_VALUE'],
+        "tank3_k1_start": record_TANK03LR_STR['ITEM_VALUE'],
+        "tank3_k1_stop": record_TANK03LR_STP['ITEM_VALUE'],
         "tank3_k1_custom3": 0.00,
         "tank3_k1_custom4": 0.00,
-        "tank4_k2_batch_no": "0",
-        "tank4_k2_trig": 0,
-        "tank4_k2_t": 31.00,
-        "tank4_k2_i": 0.00,
-        "tank4_k2_s": 0.00,
-        "tank4_k2_start": 0,
-        "tank4_k2_stop": 0,
+        "tank4_k2_batch_no": record_TANK04_BATCH['ITEM_VALUE'],
+        "tank4_k2_trig": record_TANK04_CT['ITEM_VALUE'],
+        "tank4_k2_t": record_TI008_PV['ITEM_VALUE'],
+        "tank4_k2_i": record_VSD05_I['ITEM_VALUE'],
+        "tank4_k2_s": record_VSD05_S['ITEM_VALUE'],
+        "tank4_k2_start": record_TANK04LR_STR['ITEM_VALUE'],
+        "tank4_k2_stop": record_TANK04LR_STP['ITEM_VALUE'],
         "tank4_k2_custom3": 0.00,
         "tank4_k2_custom4": 0.00,
-        "tank5_filling1_batch_no": "0",
-        "tank5_filling1_trig": 0,
-        "tank5_filling1_fill_t": 31.00,
-        "tank5_filling1_homo_p": 0.00,
-        "tank5_filling1_homo_t": 31.00,
-        "tank5_filling1_fill_t2": 0,
-        "tank5_filling1_start": 0,
-        "tank5_filling1_stop": 0,
+        "tank5_filling1_batch_no": filling_TANK05_BATCH['ITEM_VALUE'],
+        "tank5_filling1_trig": filling_TANK05_CT['ITEM_VALUE'],
+        "tank5_filling1_fill_t": filling_TI005_PV['ITEM_VALUE'],
+        "tank5_filling1_homo_p": filling_PT_001['ITEM_VALUE'],
+        "tank5_filling1_homo_t": filling_TI015_PV['ITEM_VALUE'],
+        "tank5_filling1_fill_t2": filling_TI008_PV['ITEM_VALUE'],
+        "tank5_filling1_start": filling_TANK05LR_STR['ITEM_VALUE'],
+        "tank5_filling1_stop": filling_TANK05LR_STP['ITEM_VALUE'],
         "tank5_filling1_custom3": 0.00,
         "tank5_filling1_custom4": 0.00,
-        "tank6_k3_batch_no": "0",
-        "tank6_k3_trig": 0,
-        "tank6_k3_t": 31.00,
-        "tank6_k3_i": 0.00,
-        "tank6_k3_s": 0.00,
-        "tank6_k3_start": 0,
-        "tank6_k3_stop": 0,
+        "tank6_k3_batch_no": record_TANK06_BATCH['ITEM_VALUE'],
+        "tank6_k3_trig": record_TANK06_CT['ITEM_VALUE'],
+        "tank6_k3_t": record_TI908_PV['ITEM_VALUE'],
+        "tank6_k3_i": record_VSD07_I['ITEM_VALUE'],
+        "tank6_k3_s": record_VSD07_S['ITEM_VALUE'],
+        "tank6_k3_start": record_TANK06LR_STR['ITEM_VALUE'],
+        "tank6_k3_stop": record_TANK06LR_STP['ITEM_VALUE'],
         "tank6_k3_custom3": 0.00,
         "tank6_k3_custom4": 0.00,
-        "tank7_filling2_batch_no": "0",
-        "tank7_filling2_trig": 0,
-        "tank7_filling2_fill_t": 31.00,
-        "tank7_filling2_homo_p": 0.00,
-        "tank7_filling2_homo_t": 31.00,
-        "tank7_filling2_start": 0,
-        "tank7_filling2_stop": 0,
+        "tank7_filling2_batch_no": filling2_TANK07_BATCH['ITEM_VALUE'],
+        "tank7_filling2_trig": filling2_TANK05_CT['ITEM_VALUE'],
+        "tank7_filling2_fill_t": filling2_TI908_PV['ITEM_VALUE'],
+        "tank7_filling2_homo_p": filling2_PT_001['ITEM_VALUE'],
+        "tank7_filling2_homo_t": filling2_TI015_PV['ITEM_VALUE'],
+        "tank7_filling2_start": filling2_TANK07LR_STR['ITEM_VALUE'],
+        "tank7_filling2_stop": filling2_TANK07LR_STP['ITEM_VALUE'],
         "tank7_filling2_custom3": 0.00,
         "tank7_filling2_custom4": 0.00,
         "remark": "-",
@@ -290,7 +469,63 @@ if __name__ == "__main__":
             logging.info('START PROCESS NOW !!')
             # tag_values = read_tags()  # Uncomment this line when ready to use tag values
             # call_create_api(tag_values)
-            call_create_api()
+
+            # Define the timezone
+            tz = pytz.timezone('Asia/Bangkok')
+
+            # Get the current datetime in the specified timezone
+            this_moment = datetime.now(tz)
+
+            # Format the datetime as a string in '%Y-%m-%d %H:%M:%S' format
+            current_datetime = this_moment.strftime('%Y-%m-%d %H:%M:000')
+            current_MM_S000 = this_moment.strftime('%M:%S')
+
+            if current_MM_S000 == "00:00":
+                call_create_api(current_datetime)
+                print('00 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('00 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "01:00":
+                call_create_api(current_datetime)
+                print('01 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('01 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "02:00":
+                call_create_api(current_datetime)
+                print('02 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('02 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "03:00":
+                call_create_api(current_datetime)
+                print('03 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('03 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "04:00":
+                call_create_api(current_datetime)
+                print('04 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('04 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "05:00":
+                call_create_api(current_datetime)
+                print('05 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('05 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "06:00":
+                call_create_api(current_datetime)
+                print('06 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('06 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "07:00":
+                call_create_api(current_datetime)
+                print('07 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('07 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "08:00":
+                call_create_api(current_datetime)
+                print('08 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('08 current_MM_S000: {}'.format(current_MM_S000))
+            else if current_MM_S000 == "09:00":
+                call_create_api(current_datetime)
+                print('09 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('09 current_MM_S000: {}'.format(current_MM_S000))
+            else:
+                print('NO Match current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('NO Match current_MM_S000: {}'.format(current_MM_S000))
+
+                
+             
             countdown(2)
             logging.info('END PROCESS !!')
         except Exception as e:
