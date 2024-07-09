@@ -74,7 +74,9 @@ def call_test_api():
         logging.error('An error occurred: {}'.format(err))
 
 # def call_create_api(tag_values):
-def call_create_api():
+def call_create_api(current_datetime):
+
+    current_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:00.000')
     
     data_set  = dss.openDataset(conn, 'ITEM_VAL',['NAME','ITEM_VALUE'], 'ru')
     record_BatchNo     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_BATCH_BUF')
@@ -460,12 +462,29 @@ def call_create_api():
         print('An error occurred: {}'.format(err))
         logging.error('An error occurred: {}'.format(err))
 
+
+def connect():
+    try:
+        conn = dss.connect()
+        return conn
+    except Exception as e:
+        print("CANNOT CONNECT CI !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+        logs_now = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+        error_message = '{} : problem with script or manual: {}'.format(logs_now, e)
+        print(error_message)
+        logging.error(error_message)
+        raise e
+
 if __name__ == "__main__":
+    
+    print("START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
+
     setup_logging()
-    conn = dss.connect()
+    connect()
 
     while True:
         try:
+            print("START PROCESS NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
             logging.info('START PROCESS NOW !!')
             # tag_values = read_tags()  # Uncomment this line when ready to use tag values
             # call_create_api(tag_values)
@@ -474,60 +493,324 @@ if __name__ == "__main__":
             tz = pytz.timezone('Asia/Bangkok')
 
             # Get the current datetime in the specified timezone
-            this_moment = datetime.now(tz)
+            current_datetime_24 = datetime.now(tz)
 
-            # Format the datetime as a string in '%Y-%m-%d %H:%M:%S' format
-            current_datetime = this_moment.strftime('%Y-%m-%d %H:%M:000')
-            current_MM_S000 = this_moment.strftime('%M:%S')
+            # Get the current datetime
+            current_datetime = datetime.now()
+
+
+            # Format the current datetime to include only minutes and seconds (MM:SS)
+            current_MM_SS = current_datetime.strftime('%M:%S')
+
+
+            current_MM_S000 = current_datetime.strftime('%M:%S')
+
 
             if current_MM_S000 == "00:00":
-                call_create_api(current_datetime)
+                call_create_api(current_datetime_24)
                 print('00 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('00 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "01:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "01:00":
+                call_create_api(current_datetime_24)
                 print('01 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('01 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "02:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "02:00":
+                call_create_api(current_datetime_24)
                 print('02 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('02 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "03:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "03:00":
+                call_create_api(current_datetime_24)
                 print('03 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('03 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "04:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "04:00":
+                call_create_api(current_datetime_24)
                 print('04 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('04 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "05:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "05:00":
+                call_create_api(current_datetime_24)
                 print('05 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('05 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "06:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "06:00":
+                call_create_api(current_datetime_24)
                 print('06 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('06 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "07:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "07:00":
+                call_create_api(current_datetime_24)
                 print('07 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('07 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "08:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "08:00":
+                call_create_api(current_datetime_24)
                 print('08 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('08 current_MM_S000: {}'.format(current_MM_S000))
-            else if current_MM_S000 == "09:00":
-                call_create_api(current_datetime)
+                countdown(5)
+            elif current_MM_S000 == "09:00":
+                call_create_api(current_datetime_24)
                 print('09 current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('09 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "10:00":
+                call_create_api(current_datetime_24)
+                print('10 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('10 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "11:00":
+                call_create_api(current_datetime_24)
+                print('11 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('11 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "12:00":
+                call_create_api(current_datetime_24)
+                print('12 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('12 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "13:00":
+                call_create_api(current_datetime_24)
+                print('13 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('13 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "14:00":
+                call_create_api(current_datetime_24)
+                print('14 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('14 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "15:00":
+                call_create_api(current_datetime_24)
+                print('15 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('15 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "16:00":
+                call_create_api(current_datetime_24)
+                print('16 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('16 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "17:00":
+                call_create_api(current_datetime_24)
+                print('17 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('17 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "18:00":
+                call_create_api(current_datetime_24)
+                print('18 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('18 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "19:00":
+                call_create_api(current_datetime_24)
+                print('19 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('19 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "20:00":
+                call_create_api(current_datetime_24)
+                print('20 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('20 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "21:00":
+                call_create_api(current_datetime_24)
+                print('21 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('21 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "22:00":
+                call_create_api(current_datetime_24)
+                print('22 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('22 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "23:00":
+                call_create_api(current_datetime_24)
+                print('23 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('23 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "24:00":
+                call_create_api(current_datetime_24)
+                print('24 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('24 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "25:00":
+                call_create_api(current_datetime_24)
+                print('25 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('25 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "26:00":
+                call_create_api(current_datetime_24)
+                print('26 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('26 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "27:00":
+                call_create_api(current_datetime_24)
+                print('27 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('27 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "28:00":
+                call_create_api(current_datetime_24)
+                print('28 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('28 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "29:00":
+                call_create_api(current_datetime_24)
+                print('29 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('29 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "30:00":
+                call_create_api(current_datetime_24)
+                print('30 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('30 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "31:00":
+                call_create_api(current_datetime_24)
+                print('31 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('31 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "32:00":
+                call_create_api(current_datetime_24)
+                print('32 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('32 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "33:00":
+                call_create_api(current_datetime_24)
+                print('33 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('33 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "34:00":
+                call_create_api(current_datetime_24)
+                print('34 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('34 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "35:00":
+                call_create_api(current_datetime_24)
+                print('35 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('35 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "36:00":
+                call_create_api(current_datetime_24)
+                print('36 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('36 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "37:00":
+                call_create_api(current_datetime_24)
+                print('37 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('37 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "38:00":
+                call_create_api(current_datetime_24)
+                print('38 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('38 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "39:00":
+                call_create_api(current_datetime_24)
+                print('39 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('39 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "40:00":
+                call_create_api(current_datetime_24)
+                print('40 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('40 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "41:00":
+                call_create_api(current_datetime_24)
+                print('41 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('41 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "42:00":
+                call_create_api(current_datetime_24)
+                print('42 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('42 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "43:00":
+                call_create_api(current_datetime_24)
+                print('43 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('43 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "44:00":
+                call_create_api(current_datetime_24)
+                print('44 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('44 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "45:00":
+                call_create_api(current_datetime_24)
+                print('45 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('45 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "46:00":
+                call_create_api(current_datetime_24)
+                print('46 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('46 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "47:00":
+                call_create_api(current_datetime_24)
+                print('47 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('47 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "48:00":
+                call_create_api(current_datetime_24)
+                print('48 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('48 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "49:00":
+                call_create_api(current_datetime_24)
+                print('49 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('49 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "50:00":
+                call_create_api(current_datetime_24)
+                print('50 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('50 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "51:00":
+                call_create_api(current_datetime_24)
+                print('51 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('51 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "52:00":
+                call_create_api(current_datetime_24)
+                print('52 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('52 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "53:00":
+                call_create_api(current_datetime_24)
+                print('53 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('53 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "54:00":
+                call_create_api(current_datetime_24)
+                print('54 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('54 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "55:00":
+                call_create_api(current_datetime_24)
+                print('55 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('55 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "56:00":
+                call_create_api(current_datetime_24)
+                print('56 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('56 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "57:00":
+                call_create_api(current_datetime_24)
+                print('57 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('57 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "58:00":
+                call_create_api(current_datetime_24)
+                print('58 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('58 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
+            elif current_MM_S000 == "59:00":
+                call_create_api(current_datetime_24)
+                print('59 current_MM_S000: {}'.format(current_MM_S000))
+                logging.info('59 current_MM_S000: {}'.format(current_MM_S000))
+                countdown(5)
             else:
-                print('NO Match current_MM_S000: {}'.format(current_MM_S000))
+                # print('NO Match current_MM_S000: {}'.format(current_MM_S000))
                 logging.info('NO Match current_MM_S000: {}'.format(current_MM_S000))
 
-                
-             
-            countdown(2)
-            logging.info('END PROCESS !!')
+            # countdown()
         except Exception as e:
             logs_now = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
             error_message = '{} : problem with script or manual: {}'.format(logs_now, e)
