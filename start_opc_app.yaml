@@ -1,0 +1,4 @@
+apps:
+  - name: opc-client-app-python
+    script: app_ci2.py
+    interpreter: C:\Python27\python.exe
