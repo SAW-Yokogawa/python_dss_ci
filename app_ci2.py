@@ -36,7 +36,7 @@ def read_tags():
         tag_values[tag] = value
 
         print('Value of {}: {}'.format(tag, value))
-        logging.info('Value of {}: {}'.format(tag, value))
+        # logging.info('Value of {}: {}'.format(tag, value))
 
     return tag_values
 
@@ -56,7 +56,7 @@ def countdown(time_sec):
 
 def call_test_api():
     print("CALL TEST API NOW !!")
-    url = 'http://192.168.2.88:8000/api/ci-data/test-connection'
+    url = 'http://192.168.2.95:8000/api/ci-data/test-connection'
     headers = {'Content-Type': 'application/json'}
 
     try:
@@ -81,94 +81,94 @@ def call_create_api(current_datetime):
     data_set  = dss.openDataset(conn, 'ITEM_VAL',['NAME','ITEM_VALUE'], 'ru')
     record_BatchNo     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_BATCH_BUF')
     print('BatchNo DATA: {}'.format(record_BatchNo))
-    logging.info('BatchNo DATA: {}'.format(record_BatchNo))
+    # logging.info('BatchNo DATA: {}'.format(record_BatchNo))
 
     # write_logs(record_HMI201_BATCH_BUF)
     record_OrderNo     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_ORDER_BUF')
     print('OrderNo DATA: {}'.format(record_OrderNo))
-    logging.info('OrderNo DATA: {}'.format(record_OrderNo))
-    logging.info(record_OrderNo)
+    # logging.info('OrderNo DATA: {}'.format(record_OrderNo))
+    # logging.info(record_OrderNo)
     # write_logs(record_HMI201_ORDER_BUF)
     record_ProductId     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_PROD_BUFF')
     print('ProductId DATA: {}'.format(record_ProductId))
-    logging.info('ProductId DATA: {}'.format(record_ProductId))
+    # logging.info('ProductId DATA: {}'.format(record_ProductId))
     # write_logs(record_HMI201_PROD_BUFF)
     record_FillNo     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_FILL_BUF')
     print('FillNo DATA: {}'.format(record_FillNo))
-    logging.info('FillNo DATA: {}'.format(record_FillNo))
+    # logging.info('FillNo DATA: {}'.format(record_FillNo))
     # write_logs(record_HMI201_FILL_BUF)
     record_OperatorId     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_OPER_BUFF')
     print (record_OperatorId)
-    logging.info(record_OperatorId)
+    # logging.info(record_OperatorId)
     # write_logs(record_HMI201_OPER_BUFF)
     record_BatchStart = dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI203_TRG_SET')
     print (record_BatchStart)
-    logging.info(record_BatchStart)
+    # logging.info(record_BatchStart)
     # write_logs(record_TANK01_BATCH)
     record_BatchStop  = dss.readEqual(conn, data_set, 'GREASE2.FCX0103.HMI204_TRG_SET')
     print (record_BatchStop)
-    logging.info(record_BatchStop)
+    # logging.info(record_BatchStop)
 
 
 
 
     record_TANK01_BATCH = dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK01_BATCH')
     print (record_TANK01_BATCH)
-    logging.info(record_TANK01_BATCH)
+    # logging.info(record_TANK01_BATCH)
 
     record_TANK01_CT    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK01_CT')
     print (record_TANK01_CT)
-    logging.info(record_TANK01_CT)
+    # logging.info(record_TANK01_CT)
     record_TANK01LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK01LR_STR')
     print (record_TANK01LR_STR)
-    logging.info(record_TANK01LR_STR)
+    # logging.info(record_TANK01LR_STR)
     record_TANK01LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK01LR_STP')
     print (record_TANK01LR_STP)
-    logging.info(record_TANK01LR_STP)
+    # logging.info(record_TANK01LR_STP)
 
 
 
 
     record_TANK02_BATCH     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK02_BATCH')
     print (record_TANK02_BATCH)
-    logging.info(record_TANK02_BATCH)
+    # logging.info(record_TANK02_BATCH)
 
     record_TANK02_CT     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK02_CT')
     print (record_TANK02_CT)
-    logging.info(record_TANK02_CT)
+    # logging.info(record_TANK02_CT)
 
     record_TI003_PV    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI003_PV')
     print (record_TI003_PV)
-    logging.info(record_TI003_PV)
+    # logging.info(record_TI003_PV)
 
     record_PI014_PV     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.PI014_PV')
     print (record_PI014_PV)
-    logging.info(record_PI014_PV)
+    # logging.info(record_PI014_PV)
 
     record_TI014_PV    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI014_PV')
     print (record_TI014_PV)
-    logging.info(record_TI014_PV)
+    # logging.info(record_TI014_PV)
 
     record_TANK02LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK02LR_STR')
     print (record_TANK02LR_STR)
-    logging.info(record_TANK02LR_STR)
+    # logging.info(record_TANK02LR_STR)
 
     record_TANK02LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK02LR_STP')
     print (record_TANK02LR_STP)
-    logging.info(record_TANK02LR_STP)
+    # logging.info(record_TANK02LR_STP)
 
 
     record_TANK03_BATCH     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_BATCH')
     print (record_TANK03_BATCH)
-    logging.info(record_TANK03_BATCH)
+    # logging.info(record_TANK03_BATCH)
 
     record_TANK03_CT    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_CT')
     print (record_TANK03_CT)
-    logging.info(record_TANK03_CT)
+    # logging.info(record_TANK03_CT)
 
     record_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
     print (record_TI005_PV)
-    logging.info(record_TI005_PV)
+    # logging.info(record_TI005_PV)
 
     record_VSD04_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_I')
     print (record_VSD04_I)
@@ -176,174 +176,174 @@ def call_create_api(current_datetime):
 
     record_VSD04_S    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_S')
     print (record_VSD04_S)
-    logging.info(record_VSD04_S)
+    # logging.info(record_VSD04_S)
 
     record_TANK03LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STR')
     print (record_TANK03LR_STR)
-    logging.info(record_TANK03LR_STR)
+    # logging.info(record_TANK03LR_STR)
 
     record_TANK03LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STP')
     print (record_TANK03LR_STP)
-    logging.info(record_TANK03LR_STP)
+    # logging.info(record_TANK03LR_STP)
 
 
 
 
     record_TANK04_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04_BATCH')
     print (record_TANK04_BATCH)
-    logging.info(record_TANK04_BATCH)
+    # logging.info(record_TANK04_BATCH)
 
     record_TANK04_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04_CT')
     print (record_TANK04_CT)
-    logging.info(record_TANK04_CT)
+    # logging.info(record_TANK04_CT)
 
     record_TI008_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI008_PV')
     print (record_TI008_PV)
-    logging.info(record_TI008_PV)
+    # logging.info(record_TI008_PV)
 
     record_VSD05_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD05_I')
     print (record_VSD05_I)
-    logging.info(record_VSD05_I)
+    # logging.info(record_VSD05_I)
 
     record_VSD05_S   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD05_S')
     print (record_VSD05_S)
-    logging.info(record_VSD05_S)
+    # logging.info(record_VSD05_S)
 
     record_TANK04LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04LR_STR')
     print (record_TANK04LR_STR)
-    logging.info(record_TANK04LR_STR)
+    # logging.info(record_TANK04LR_STR)
 
     record_TANK04LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK04LR_STP')
     print (record_TANK04LR_STP)
-    logging.info(record_TANK04LR_STP)
+    # logging.info(record_TANK04LR_STP)
 
 
     # TANK05 K2
 
     record_TANK05_BATCH     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_BATCH')
     print (record_TANK05_BATCH)
-    logging.info(record_TANK05_BATCH)
+    # logging.info(record_TANK05_BATCH)
 
     record_TANK03_CT    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03_CT')
     print (record_TANK03_CT)
-    logging.info(record_TANK03_CT)
+    # logging.info(record_TANK03_CT)
 
     record_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
     print (record_TI005_PV)
-    logging.info(record_TI005_PV)
+    # logging.info(record_TI005_PV)
 
     record_VSD04_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_I')
     print (record_VSD04_I)
-    logging.info(record_VSD04_I)
+    # logging.info(record_VSD04_I)
 
     record_VSD04_S    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_S')
     print (record_VSD04_S)
-    logging.info(record_VSD04_S)
+    # logging.info(record_VSD04_S)
 
     record_TANK03LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STR')
     print (record_TANK03LR_STR)
-    logging.info(record_TANK03LR_STR)
+    # logging.info(record_TANK03LR_STR)
 
     record_TANK03LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK03LR_STP')
     print (record_TANK03LR_STP)
-    logging.info(record_TANK03LR_STP)
+    # logging.info(record_TANK03LR_STP)
 
 
 
     #  Tank 6 K3
     record_TANK06_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06_BATCH')
     print (record_TANK06_BATCH)
-    logging.info(record_TANK06_BATCH)
+    # logging.info(record_TANK06_BATCH)
 
     record_TANK06_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06_CT')
     print (record_TANK06_CT)
-    logging.info(record_TANK06_CT)
+    # logging.info(record_TANK06_CT)
 
     record_TI908_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI908_PV')
     print (record_TI908_PV)
-    logging.info(record_TI908_PV)
+    # logging.info(record_TI908_PV)
 
     record_VSD07_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD07_I')
     print (record_VSD07_I)
-    logging.info(record_VSD07_I)
+    # logging.info(record_VSD07_I)
 
     record_VSD07_S   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD07_S')
     print (record_VSD07_S)
-    logging.info(record_VSD07_S)
+    # logging.info(record_VSD07_S)
 
     record_TANK06LR_STR    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06LR_STR')
     print (record_TANK06LR_STR)
-    logging.info(record_TANK06LR_STR)
+    # logging.info(record_TANK06LR_STR)
 
     record_TANK06LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK06LR_STP')
     print (record_TANK06LR_STP)
-    logging.info(record_TANK06LR_STP)
+    # logging.info(record_TANK06LR_STP)
 
 
     # Filling
 
     filling_TANK05_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_BATCH')
     print (filling_TANK05_BATCH)
-    logging.info(filling_TANK05_BATCH)
+    # logging.info(filling_TANK05_BATCH)
 
     filling_TANK05_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_CT')
     print (filling_TANK05_CT)
-    logging.info(filling_TANK05_CT)
+    # logging.info(filling_TANK05_CT)
 
     filling_TI005_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI005_PV')
     print (filling_TI005_PV)
-    logging.info(filling_TI005_PV)
+    # logging.info(filling_TI005_PV)
 
     filling_PT_001    	= dss.readEqual(conn, data_set, 'GREASE2.HOMOGENIZER.PT_001')
     print (filling_PT_001)
-    logging.info(filling_PT_001)
+    # logging.info(filling_PT_001)
 
     filling_TI015_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI015_PV')
     print (filling_TI015_PV)
-    logging.info(filling_TI015_PV)
+    # logging.info(filling_TI015_PV)
 
     filling_TI008_PV    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI008_PV')
     print (filling_TI008_PV)
-    logging.info(filling_TI008_PV)
+    # logging.info(filling_TI008_PV)
 
     filling_TANK05LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05LR_STR')
     print (filling_TANK05LR_STR)
-    logging.info(filling_TANK05LR_STR)
+    # logging.info(filling_TANK05LR_STR)
 
     filling_TANK05LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05LR_STP')
     print (filling_TANK05LR_STP)
-    logging.info(filling_TANK05LR_STP)
+    # logging.info(filling_TANK05LR_STP)
 
     # filling2
 
     filling2_TANK07_BATCH    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07_BATCH')
     print (filling2_TANK07_BATCH)
-    logging.info(filling2_TANK07_BATCH)
+    # logging.info(filling2_TANK07_BATCH)
 
     filling2_TANK05_CT   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK05_CT')
     print (filling2_TANK05_CT)
-    logging.info(filling2_TANK05_CT)
+    # logging.info(filling2_TANK05_CT)
 
     filling2_TI908_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI908_PV')
     print (filling2_TI908_PV)
-    logging.info(filling2_TI908_PV)
+    # logging.info(filling2_TI908_PV)
 
     filling2_PT_001    	= dss.readEqual(conn, data_set, 'GREASE2.HOMOGENIZER.PT_001')
     print (filling2_PT_001)
-    logging.info(filling2_PT_001)
+    # logging.info(filling2_PT_001)
 
     filling2_TI015_PV   	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI015_PV')
     print (filling2_TI015_PV)
-    logging.info(filling2_TI015_PV)
+    # logging.info(filling2_TI015_PV)
 
 
     filling2_TANK07LR_STR     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07LR_STR')
     print (filling2_TANK07LR_STR)
-    logging.info(filling2_TANK07LR_STR)
+    # logging.info(filling2_TANK07LR_STR)
 
     filling2_TANK07LR_STP     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TANK07LR_STP')
     print (filling2_TANK07LR_STP)
-    logging.info(filling2_TANK07LR_STP)
+    # logging.info(filling2_TANK07LR_STP)
 
 
     print("CALL CREATE API START PROCESS NOW !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
@@ -354,7 +354,7 @@ def call_create_api(current_datetime):
     # order_no = tag_values.get('GREASE.FAM0101.HMI201_ORDER_BUF', 'default_order_no')
     # Add other tag values as needed
 
-    url = 'http://192.168.2.88:8000/api/ci-data/add-ci-data'
+    url = 'http://192.168.2.95:8000/api/ci-data/add-ci-data'
     data = {
         "time_ci_report": current_datetime,
         "batch_no": record_BatchNo['ITEM_VALUE'],
@@ -436,14 +436,14 @@ def call_create_api(current_datetime):
 
     try:
         # print("POST DATA {} ".format(data) )
-        logging.info('POST DATA: {}'.format(data))
+        # logging.info('POST DATA: {}'.format(data))
 
         response = requests.post(url, json=data, headers=headers, timeout=10)
         response.raise_for_status()
         if response.status_code == 200:
             print("CALL TEST API SUCCESS !!")
             # print(response.json())  # Assuming the response is JSON, print or process it accordingly
-            logging.info('CALL TEST API SUCCESS !! data : {}'.format())
+            # logging.info('CALL TEST API SUCCESS !! data : {}'.format())
         else:
             print('Unexpected response from API: Status Code {}'.format(response.status_code))
             logging.error('Unexpected response from API: Status Code {}'.format(response.status_code))
@@ -509,306 +509,306 @@ if __name__ == "__main__":
             if current_MM_S000 == "00:00":
                 call_create_api(current_datetime_24)
                 print('00 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('00 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('00 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "01:00":
                 call_create_api(current_datetime_24)
                 print('01 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('01 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('01 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "02:00":
                 call_create_api(current_datetime_24)
                 print('02 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('02 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('02 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "03:00":
                 call_create_api(current_datetime_24)
                 print('03 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('03 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('03 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "04:00":
                 call_create_api(current_datetime_24)
                 print('04 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('04 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('04 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "05:00":
                 call_create_api(current_datetime_24)
                 print('05 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('05 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('05 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "06:00":
                 call_create_api(current_datetime_24)
                 print('06 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('06 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('06 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "07:00":
                 call_create_api(current_datetime_24)
                 print('07 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('07 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('07 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "08:00":
                 call_create_api(current_datetime_24)
                 print('08 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('08 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('08 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "09:00":
                 call_create_api(current_datetime_24)
                 print('09 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('09 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('09 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "10:00":
                 call_create_api(current_datetime_24)
                 print('10 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('10 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('10 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "11:00":
                 call_create_api(current_datetime_24)
                 print('11 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('11 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('11 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "12:00":
                 call_create_api(current_datetime_24)
                 print('12 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('12 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('12 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "13:00":
                 call_create_api(current_datetime_24)
                 print('13 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('13 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('13 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "14:00":
                 call_create_api(current_datetime_24)
                 print('14 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('14 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('14 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "15:00":
                 call_create_api(current_datetime_24)
                 print('15 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('15 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('15 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "16:00":
                 call_create_api(current_datetime_24)
                 print('16 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('16 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('16 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "17:00":
                 call_create_api(current_datetime_24)
                 print('17 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('17 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('17 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "18:00":
                 call_create_api(current_datetime_24)
                 print('18 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('18 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('18 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "19:00":
                 call_create_api(current_datetime_24)
                 print('19 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('19 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('19 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "20:00":
                 call_create_api(current_datetime_24)
                 print('20 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('20 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('20 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "21:00":
                 call_create_api(current_datetime_24)
                 print('21 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('21 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('21 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "22:00":
                 call_create_api(current_datetime_24)
                 print('22 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('22 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('22 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "23:00":
                 call_create_api(current_datetime_24)
                 print('23 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('23 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('23 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "24:00":
                 call_create_api(current_datetime_24)
                 print('24 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('24 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('24 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "25:00":
                 call_create_api(current_datetime_24)
                 print('25 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('25 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('25 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "26:00":
                 call_create_api(current_datetime_24)
                 print('26 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('26 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('26 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "27:00":
                 call_create_api(current_datetime_24)
                 print('27 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('27 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('27 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "28:00":
                 call_create_api(current_datetime_24)
                 print('28 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('28 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('28 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "29:00":
                 call_create_api(current_datetime_24)
                 print('29 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('29 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('29 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "30:00":
                 call_create_api(current_datetime_24)
                 print('30 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('30 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('30 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "31:00":
                 call_create_api(current_datetime_24)
                 print('31 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('31 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('31 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "32:00":
                 call_create_api(current_datetime_24)
                 print('32 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('32 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('32 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "33:00":
                 call_create_api(current_datetime_24)
                 print('33 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('33 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('33 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "34:00":
                 call_create_api(current_datetime_24)
                 print('34 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('34 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('34 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "35:00":
                 call_create_api(current_datetime_24)
                 print('35 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('35 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('35 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "36:00":
                 call_create_api(current_datetime_24)
                 print('36 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('36 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('36 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "37:00":
                 call_create_api(current_datetime_24)
                 print('37 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('37 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('37 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "38:00":
                 call_create_api(current_datetime_24)
                 print('38 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('38 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('38 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "39:00":
                 call_create_api(current_datetime_24)
                 print('39 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('39 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('39 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "40:00":
                 call_create_api(current_datetime_24)
                 print('40 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('40 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('40 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "41:00":
                 call_create_api(current_datetime_24)
                 print('41 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('41 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('41 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "42:00":
                 call_create_api(current_datetime_24)
                 print('42 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('42 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('42 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "43:00":
                 call_create_api(current_datetime_24)
                 print('43 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('43 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('43 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "44:00":
                 call_create_api(current_datetime_24)
                 print('44 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('44 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('44 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "45:00":
                 call_create_api(current_datetime_24)
                 print('45 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('45 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('45 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "46:00":
                 call_create_api(current_datetime_24)
                 print('46 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('46 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('46 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "47:00":
                 call_create_api(current_datetime_24)
                 print('47 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('47 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('47 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "48:00":
                 call_create_api(current_datetime_24)
                 print('48 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('48 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('48 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "49:00":
                 call_create_api(current_datetime_24)
                 print('49 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('49 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('49 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "50:00":
                 call_create_api(current_datetime_24)
                 print('50 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('50 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('50 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "51:00":
                 call_create_api(current_datetime_24)
                 print('51 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('51 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('51 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "52:00":
                 call_create_api(current_datetime_24)
                 print('52 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('52 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('52 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "53:00":
                 call_create_api(current_datetime_24)
                 print('53 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('53 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('53 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "54:00":
                 call_create_api(current_datetime_24)
                 print('54 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('54 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('54 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "55:00":
                 call_create_api(current_datetime_24)
                 print('55 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('55 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('55 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "56:00":
                 call_create_api(current_datetime_24)
                 print('56 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('56 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('56 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "57:00":
                 call_create_api(current_datetime_24)
                 print('57 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('57 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('57 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "58:00":
                 call_create_api(current_datetime_24)
                 print('58 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('58 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('58 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
             elif current_MM_S000 == "59:00":
                 call_create_api(current_datetime_24)
                 print('59 current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('59 current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('59 current_MM_S000: {}'.format(current_MM_S000))
                 countdown(5)
-            else:
+            # else:
                 # print('NO Match current_MM_S000: {}'.format(current_MM_S000))
-                logging.info('NO Match current_MM_S000: {}'.format(current_MM_S000))
+                # logging.info('NO Match current_MM_S000: {}'.format(current_MM_S000))
 
             # countdown()
         except Exception as e:
