@@ -172,7 +172,7 @@ def call_create_api(current_datetime):
 
     record_VSD04_I    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_I')
     print (record_VSD04_I)
-    logging.info(record_VSD04_I)
+    # logging.info(record_VSD04_I)
 
     record_VSD04_S    	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.VSD04_S')
     print (record_VSD04_S)
@@ -435,7 +435,7 @@ def call_create_api(current_datetime):
     headers = {'Content-Type': 'application/json'}
 
     try:
-        # print("POST DATA {} ".format(data) )
+        print("POST DATA {} ".format(data) )
         # logging.info('POST DATA: {}'.format(data))
 
         response = requests.post(url, json=data, headers=headers, timeout=10)
@@ -478,10 +478,11 @@ def call_create_api(current_datetime):
 if __name__ == "__main__":
     
     print("START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
-
+   
     setup_logging()
     conn = dss.connect()
-
+    logging.info('START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>')
+    logging.info('CI DSS CONCECTED ')
     while True:
         try:
             # print("START PROCESS NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
