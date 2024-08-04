@@ -425,6 +425,7 @@ def call_create_api(current_datetime):
         "tank6_k3_s": record_VSD07_S['ITEM_VALUE'],
         "tank6_k3_start": record_TANK06LR_STR['ITEM_VALUE'],
         "tank6_k3_stop": record_TANK06LR_STP['ITEM_VALUE'],
+        "tank6_k3_custom1": filling_PT_001['ITEM_VALUE'],
         "tank6_k3_custom3": 0.00,
         "tank6_k3_custom4": 0.00,
         "tank7_filling2_batch_no": filling2_TANK07_BATCH['ITEM_VALUE'],
