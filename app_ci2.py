@@ -9,7 +9,10 @@ import logging
 import pytz
 
 def setup_logging():
-    logging.basicConfig(format='%(asctime)s %(message)s', filename='myapp.log', level=logging.INFO)
+    # Define the log filename with a date placeholder
+    log_filename = datetime.now().strftime('logs/myapp_%Y-%m-%d.log')
+
+    logging.basicConfig(format='%(asctime)s %(message)s', filename=log_filename, level=logging.INFO)
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
@@ -76,14 +79,7 @@ def call_test_api():
 # def call_create_api(tag_values):
 def call_create_api(current_datetime):
 
-    logging.info('START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>')
-    print('[{}] START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>> '.format(datetime.now()))
-    logging.info('OPC CLIENT CONNECTING ... ')
-    print('[{}] OPC CLIENT CONNECTING ... '.format(datetime.now()))
-
-    conn = dss.connect()
-    logging.info('CI DSS CONCECTED ')
-    print('[{}] CI DSS CONCECTED ... '.format(datetime.now()))
+    
 
 
     # current_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:00.000')
@@ -290,6 +286,10 @@ def call_create_api(current_datetime):
     print (record_TANK06LR_STP)
     # logging.info(record_TANK06LR_STP)
 
+    record_TI007_PV     	= dss.readEqual(conn, data_set, 'GREASE2.FCX0103.TI007_PV')
+    print (record_TI007_PV)
+    # logging.info(record_TANK06LR_STP)
+
 
     # Filling
 
@@ -426,6 +426,7 @@ def call_create_api(current_datetime):
         "tank6_k3_start": record_TANK06LR_STR['ITEM_VALUE'],
         "tank6_k3_stop": record_TANK06LR_STP['ITEM_VALUE'],
         "tank6_k3_custom1": filling_PT_001['ITEM_VALUE'],
+        "tank6_k3_custom2": record_TI007_PV['ITEM_VALUE'],
         "tank6_k3_custom3": 0.00,
         "tank6_k3_custom4": 0.00,
         "tank7_filling2_batch_no": filling2_TANK07_BATCH['ITEM_VALUE'],
@@ -455,7 +456,7 @@ def call_create_api(current_datetime):
         if response.status_code == 200:
             print("CALL TEST API SUCCESS !!")
             logging.info('CALL TEST API SUCCESS !!')
-            dss.disconnect()
+            # dss.disconnect()
             logging.info('CI DSS DISCONNECTED ')
             print('[{}] CI DSS DISCONNECTED ... '.format(datetime.now()))
             # print(response.json())  # Assuming the response is JSON, print or process it accordingly
@@ -496,6 +497,15 @@ if __name__ == "__main__":
     print("START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>")
    
     setup_logging()
+
+    logging.info('START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>>')
+    print('[{}] START OPC CLIENT NOW !! !! >>>>>>>>>>>>>>>>>>>>>>>>>> '.format(datetime.now()))
+    logging.info('OPC CLIENT CONNECTING ... ')
+    print('[{}] OPC CLIENT CONNECTING ... '.format(datetime.now()))
+
+    conn = dss.connect()
+    logging.info('CI DSS CONCECTED ')
+    print('[{}] CI DSS CONCECTED ... '.format(datetime.now()))
     
     while True:
         try:
